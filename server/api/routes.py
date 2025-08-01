@@ -48,12 +48,10 @@ async def enhance_resume(
                 pdf_b64 = base64.b64encode(f.read()).decode("utf-8")
 
             return JSONResponse({
-                "tool_call": tool_call,
                 "message": message,
                 "enhanced_resume_pdf_b64": pdf_b64,
-                "filename": "enhanced_resume.pdf"
             })
 
         return JSONResponse({
-            "error": "No valid tool call returned."
+            "error": "failed to enhance the resume."
         }, status_code=400)

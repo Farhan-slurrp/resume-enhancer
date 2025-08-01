@@ -29,12 +29,15 @@ def format_prompt(chat_history: str, resume_text: str, url_text: str = "") -> st
     }}
     }}
 
+    For your context, here is the chat history
     ### Chat:
     {chat_history}
 
+    This is the resume content
     ### Resume:
     {resume_text}
 
+    This is the content from url given in the message by user
     ### External Content:
     {url_text}
     """
